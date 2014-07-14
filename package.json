@@ -1,0 +1,10 @@
+{
+  "name": "nw-demo",
+  "main": "app/index.html",
+  "window": {
+    "icon": "app/favicon.png",
+    "toolbar": false,
+    "width":380,
+    "height":240
+  }
+}

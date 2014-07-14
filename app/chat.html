@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='images/logo.png' rel='shortcut icon' />
+<script src="scripts/chkpopupmain.js"></script>
+<link rel="stylesheet" type="text/css" href="styles/chat.css">
+</head>
+<body>
+<audio id="shakeSound" preload="auto"><source src="sounds/shake.mp3" type="audio/mpeg" /></audio>
+<div id="headTop">
+		<div id="userHead">
+		</div>
+		<div id="userInfo">
+			<div id="userName"></div>
+			<div id="userPersonal"></div>
+		</div>
+		<div style="clear: both"></div>
+</div>
+<div id="actionBar" style="display:none">
+		<div id="sendFile" class="actionButton">
+			<div title="传送文件" class="actionButtonBg"><div class="actionSendFile"></div></div>
+			<div id="sendFileMore" class="actionButtonBg"><div class="actionMore"></div></div>
+			<div style="clear: both"></div>
+			<div id="sendFileList" class="menuList">
+				<div class="menuItemDisabled">发送文件</div>
+				<form id="uploadOff" action="http://weboffline.ftn.qq.com/ftn_access/upload_offline_file" method="POST" enctype="multipart/form-data">
+					<input name="callback" type="hidden" value="parent.EQQ.Model.ChatMsg.callbackSendOffFile">
+					<input name="locallangid" type="hidden" value="2052" />
+					<input name="clientversion" type="hidden" value="1409" />
+					<input id="uo_uin" name="uin" type="hidden" />
+					<input id="uo_skey" name="skey" type="hidden" />
+					<input name="appid" type="hidden" value="1002101" />
+					<input id="uo_peeruin" name="peeruin" type="hidden" />
+					<input id="uo_vfwebqq" name="vfwebqq" type="hidden" />
+					<div class="menuItem">发送离线文件<input id="offline" class="uof" name="file" title="发送离线文件…" type="file"></div>
+					<input id="uo_fileid" name="fileid" type="hidden" />
+					<input name="senderviplevel" type="hidden" value="0" />
+					<input name="reciverviplevel" type="hidden" value="0" />
+				</form>
+			</div>
+		</div>
+		<div style="clear: both"></div>
+</div>
+<div id="leftFrame">
+	<div id="chatBox"></div>
+	<div id="toolBar">
+		<div id="facePanel"></div>
+		<div id="toolFontStyleTab">
+			<select id="fontSize"></select>
+			<div id="fontBold" title="加粗" class="toolButton">
+				<div class="fontBold"></div>
+			</div>
+			<div id="fontItalic" title="倾斜" class="toolButton">
+				<div class="fontItalic"></div>
+			</div>
+			<div id="fontUnderline" title="下划线" class="toolButton">
+				<div class="fontUnderline"></div>
+			</div>
+			<div style="clear: both"></div>
+		</div>
+		<div id="toolFaces" title="选择表情" class="toolButton">
+			<div class="toolFaces"></div>
+		</div>
+		<div title="向好友发送窗口抖动" id="toolShake" class="toolButton">
+			<div class="toolShake"></div>
+		</div>
+		<div title="发送图片" class="toolButton" style="display:none">
+			<form id="offPicUpload" action="http://weboffline.ftn.qq.com/ftn_access/upload_offline_pic" method="POST" enctype="multipart/form-data">
+				<input name="callback" type="hidden" value="parent.EQQ.Model.ChatMsg.callbackSendPic">
+				<input name="locallangid" type="hidden" value="2052" />
+				<input name="clientversion" type="hidden" value="1409" />
+				<input id="op_uin" name="uin" type="hidden" />
+				<input id="op_skey" name="skey" type="hidden" />
+				<input name="appid" type="hidden" value="1002101" />
+				<input id="op_peeruin" name="peeruin" type="hidden" />
+				<input id="op_vfwebqq" name="vfwebqq" type="hidden" />
+				<div class="toolSendPic"><input id="offPic" class="ofp" name="file" title="发送图片" type="file"></div>
+				<input id="op_fileid" name="fileid" type="hidden" />
+				<input name="senderviplevel" type="hidden" value="0" />
+				<input name="reciverviplevel" type="hidden" value="0" />
+			</form>
+		</div>
+		<div id="toolMsgRec" title="显示消息记录" class="toolButton" style="float: right">
+			<div class="toolMsgRec">消息记录</div>
+		</div>
+		<div style="clear: both"></div>
+	</div>
+	<div id="inputBoxBg">
+		<div id="inputBox" contenteditable="true"></div>
+	</div>
+	<div id="buttonBar">
+		<div id="sendMsgBtn" class="buttonBarBtn">发送</div>
+		<div id="closeMsgBtn" class="buttonBarBtn" style="display:none">关闭</div>
+		<div style="clear: both"></div>
+	</div>
+</div>
+<div id="rightFrame">
+	<div id="fileTop">
+		<div id="fileIco"></div>
+		<div id="fileInfo">
+			<div id="fileAction">发送离线文件</div>
+			<div id="fileName"></div>
+		</div>
+		<div style="clear: both"></div>
+	</div>
+	<div id="fileProcessBarBg">
+		<div id="fileProcessBar"></div>
+	</div>
+	<div id="fileProcess">
+		<div id="fileSended"></div>
+		<div id="fileSpeed"></div>
+	</div>
+	<div id="fileCancel">取消</div>
+</div>
+<div style="clear:both"></div>
+<script src="scripts/common.js"></script>
+<script src="scripts/chat.js"></script>
+</body>
+</html>

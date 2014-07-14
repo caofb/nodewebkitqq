@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='images/logo.png' rel='shortcut icon' />
+<script src="scripts/chkpopupmain.js"></script>
+<link rel="stylesheet" type="text/css" href="styles/qun.css">
+</head>
+<body>
+<div id="headTop">
+		<div id="userHead">
+			<div id="showState" state="silent"></div>
+		</div>
+		<div id="userInfo">
+			<div id="userName"></div>
+			<div id="userPersonal"></div>
+		</div>
+		<div style="clear: both"></div>
+</div>
+<div id="actionBar">
+		<div id="sendFile" class="actionButton">
+			<div title="群共享" class="actionButtonBg"><div class="actionShareFile"></div></div>
+			<div style="clear: both"></div>
+		</div>
+		<div style="clear: both"></div>
+</div>
+<div id="leftFrame">
+	<div id="chatBox"></div>
+	<div id="toolBar">
+		<div id="facePanel"></div>
+		<div id="toolFontStyleTab">
+			<select id="fontSize"></select>
+			<div id="fontBold" title="加粗" class="toolButton">
+				<div class="fontBold"></div>
+			</div>
+			<div id="fontItalic" title="倾斜" class="toolButton">
+				<div class="fontItalic"></div>
+			</div>
+			<div id="fontUnderline" title="下划线" class="toolButton">
+				<div class="fontUnderline"></div>
+			</div>
+			<div id="fontColor" title="颜色" class="toolButton">
+				<div class="fontColor"></div>
+			</div>
+			<div style="clear: both"></div>
+		</div>
+		<div id="toolFaces" title="选择表情" class="toolButton">
+			<div class="toolFaces"></div>
+		</div>
+		<div title="发送图片" class="toolButton">
+			<form id="offPicUpload" action="http://up.web2.qq.com/cgi-bin/cface_upload" method="POST" enctype="multipart/form-data">
+				<input name="from" value="control" type="hidden">
+				<input name="f" type="hidden" value="EQQ.Model.ChatMsg.callbackSendPicGroup">
+				<input id="op_vfwebqq" name="vfwebqq" type="hidden" />
+				<div class="toolSendPic"><input id="offPic" class="ofp" name="custom_face" title="发送图片" type="file"></div>
+				<input id="op_fileid" name="fileid" type="hidden" />
+			</form>
+		</div>
+		<div id="toolMsgRec" title="显示消息记录" class="toolButton" style="float: right">
+			<div class="toolMsgRec">消息记录</div>
+		</div>
+		<div style="clear: both"></div>
+	</div>
+	<div id="inputBoxBg">
+		<div id="inputBox" contenteditable="true"></div>
+	</div>
+	<div id="buttonBar">
+		<div id="sendMsgBtn" class="buttonBarBtn">发送</div>
+		<div id="closeMsgBtn" class="buttonBarBtn">关闭</div>
+		<div style="clear: both"></div>
+	</div>
+</div>
+<div style="clear:both"></div>
+<script src="scripts/common.js"></script>
+<script src="scripts/qun.js"></script>
+</body>
+</html>

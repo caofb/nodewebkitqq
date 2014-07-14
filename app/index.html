@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="styles/images/logo.png">
+    <title>Node WebKit QQ</title>
+    <link href="styles/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+  </head>
+
+  <body>
+<div id="qqBox">
+<div id="headTop">
+  <div id="userInfo">
+    <div id="userName"></div>
+    <div id="userState">
+      <div id="stateIco"></div>
+      <div id="stateList">
+        <div class="stateList" title="我在线上" class="state_online" state="online" cnstate="在线"></div>
+        <div class="stateList" title="Q我吧" class="state_callme" state="callme" cnstate="Q我"></div>
+        <div class="stateList" title="隐身" class="state_hidden" state="hidden" cnstate="隐身"></div>
+        <div class="stateList" title="忙碌" class="state_busy" state="busy" cnstate="忙碌"></div>
+        <div class="stateList" title="离开" class="state_away" state="away" cnstate="离开"></div>
+        <div class="stateList" title="请勿打扰" class="state_silent" state="silent" cnstate="静音"></div>
+        <div class="stateList" title="断开与服务器的连接" class="state_offline" state="offline" cnstate="离线"></div>
+      </div>
+    </div>
+    <div id="userLevel"></div>
+    <div id="userMotto">
+      <div id="userLnick"></div>
+      <input id="setLnick" type="text" />
+    </div>
+  </div>
+  <div id="serviceLink">
+    <a href="http://qzone.qq.com" class="qzone" target="_blank" title="QQ空间" />QQ空间</a>
+    <a href="http://mail.qq.com" class="mail" target="_blank" title="QQ邮箱" />QQ邮箱</a>
+    <a href="http://t.qq.com" class="microblog" target="_blank" title="腾讯微博" />腾讯微博</a>
+    
+  </div>
+  <div id="searchBackground">
+    <div id="searchLine"><input type="text" id="searchBar" placeholder="输入关键字搜索联系人" /></div>
+  </div>
+  <div id="searchList">
+    <div id="searchListBorder">
+    </div>
+  </div>
+</div>
+<div id="bodyBox">
+  <div id="tabs">
+    <div id="friendsListTabBg" class="tabactive"><div id="friendsListTab" active="true" list="friends"></div></div>
+    <div class="tabborder"></div>
+    <div id="qunListTabBg" class="tabs"><div id="qunListTab" active="false" list="qun"></div></div>
+    <div class="tabborder"></div>
+    <div id="recentListTabBg" class="tabs"><div id="recentListTab" active="false" list="recent"></div></div>
+    <div style="clear: both"></div>
+  </div>
+  <div id="list">
+    <div id="friendsList">
+    </div>
+    <div id="qunList" style="display: none"></div>
+    <div id="recentList" style="display: none"></div>
+  </div>
+</div>
+<div id="footer">
+  <div title="退出" id="logout" class="footerButton"></div>
+  <div style="clear:both"></div>
+</div>
+</div>
+<div id="loginBox">
+<div id="beforeLogin">
+  <div class="inputOuter">
+    <input class="inputbox" id="account" autocomplete="off" type="text" placeholder="账号" />
+    <div id="stateChg">
+      <div id="state" state="online" class="state"></div>
+      <div id="stateListLogin">
+        <div class="stateList" state="online"></div>
+        <div class="stateList" state="callme"></div>
+        <div class="stateList" state="hidden"></div>
+        <div class="stateList" state="busy"></div>
+        <div class="stateList" state="away"></div>
+        <div class="stateList" state="silent"></div>
+      </div>
+    </div>
+    <span id="regacc" class="loginRight">注册账号</span>
+  </div>
+  <div class="inputOuter">
+    <input class="inputbox" id="password" type="password" placeholder="密码" />
+    <span id="fgtpwd" class="loginRight">找回密码</span>
+  </div>
+  <div class="inputOuter">
+    <input type="checkbox" id="rememberPwd" />
+    <label for="rememberPwd" class="loginBottom" style="margin: 0 20px 0 5px">记住密码</label>
+    <input type="checkbox" id="autoLogin" style="display:none"/>
+    <label for="autoLogin" class="loginBottom" style="margin-left: 5px;display:none" >自动登录</label>
+    
+  </div>
+</div>
+<div id="afterLogin">正在登录……</div>
+<div id="footer">
+  <div id="loginButtonOuter">
+  <div id="loginButtonBorder">
+    <div id="loginButtonInner" class="btn btn-lg btn-primary btn-block">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</div>
+  </div>
+ </div>
+</div>
+</div>
+<audio id="msgSound" preload="auto"><source src="sounds/msg.mp3" type="audio/mpeg" /></audio>
+<audio id="globalSound" preload="auto"><source src="sounds/global.mp3" type="audio/mpeg" /></audio>
+<audio id="shakeSound" preload="auto"><source src="sounds/shake.mp3" type="audio/mpeg" /></audio>
+  <script id="verifyDialogTemplate" type="text/x-handlebars-template">
+  <div class="modal fade" id="verifyDialog" tabindex="-1" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" >请输入验证码</h4>
+      </div>
+      <div class="modal-body">
+        <div><img id="verifyCodeImg" /></div>
+    <div><input type="text" id="verifyCode" /></div>
+    <div><input type="button" value="提交" id="ok" /></div>
+      </div>
+    </div>
+  </div>
+</div>
+</script>
+<script src="scripts/hash.js"></script>
+<script src="scripts/common.js"></script>
+  <script src="scripts/libs/jquery-2.0.1.js"></script>
+  <script src="scripts/libs/bootstrap.min.js"></script>
+  <script src="scripts/libs/handlebars-v1.1.2.js"></script>
+  <script src="scripts/chrome.extension.js"></script>
+  <script src="scripts/md5.js"></script>
+  <script src="scripts/pinyin.dict.src.js"></script>
+  <script src="scripts/html5qq.lab.js"></script>
+  <script src="scripts/login.js"></script>
+  <script src="scripts/verify.js"></script>
+  <script src="scripts/background.js"></script>
+  <script src="scripts/main.js"></script>
+  </body>
+</html>
