@@ -8,4 +8,4 @@ nodewebkitqq
 <p>Prebuilt binaries</p>
 
 
-Windows: <a href="http://url.cn/QluLes">win32</a>
+Windows: <a href="http://pan.baidu.com/s/1c0kuxt2">win32</a>
