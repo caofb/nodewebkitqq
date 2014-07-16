@@ -1,5 +1,15 @@
 {
   "name": "NodeWebKitQQ",
+  "version": "1.0.0",
+  "description": "node webkit qq",
+  "keywords": [
+        "node webkit",
+        "qq"
+    ],
+  "dependencies": {
+        "cookie": "^0.1.2",
+        "request": "^2.34.0"       
+    },
   "main": "app/index.html",
   "window": {
     "icon": "app/favicon.png",
